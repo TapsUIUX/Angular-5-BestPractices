@@ -1,0 +1,19 @@
+<br>
+<div class="container" >
+  <div class="row">
+  <div>
+  <!-- getting clicked sort order and  item from the nav to apply sorting on the data in content component -->
+  <app-navbar (sort_request)="onEventRaisedFromList($event)"></app-navbar>
+  </div>
+  <div>
+  <!-- passing data to the pagination to auto create the components -->
+  <!-- getting clicked page to  itereate the data in the content components -->
+  <app-pagination [storageLength]="storageLength" (page_clicked_e)="onPageClicked($event)"></app-pagination>
+  </div>
+  </div>
+</div>
+<br>
+<!-- passing data to the dummy component -->
+<div class="container">
+  <app-content [userInfo]="userInfo"></app-content>
+</div>

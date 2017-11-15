@@ -1,0 +1,62 @@
+<div class="container">
+
+  <!-- Adding FormGroup property binding to the form element -->
+
+  <form class="form-group card" name="userForm" [formGroup]="userForm" novalidate (ngSubmit)="userForm.valid && onSubmit()">
+    <div formGroupName="formDetails">
+
+      <div class="card-header text-center">
+        <h4>INPUT REACTIVE FORM <small> This form is from Lazy loding Module</small></h4> <hr>
+
+        <p><i class="fa fa-hand-o-right"></i> Console.log the userForm On submit and VALIDATE in reference to that.</p>
+        <p><i class="fa fa-hand-o-right"></i> Make use of CLASSES in Styles[``], eg: ng-touched ng-dirty ng-invalid ng-valid ng-untouched ng-pristine.</p>
+      </div>
+      <div class="card-block">
+
+        <div class="form-group">
+          <label for="entername ">Enter Name</label>
+          <input class='form-control' #ref formControlName="userName" type="text" placeholder="enter your name">
+        </div>
+        <!-- <p class="haserror" *ngIf="formDetails.get('userName').hasError('required')"> Data required</p> -->
+
+        <!-- After conosole log userForm these controls get cleared -->
+        <p *ngIf="userForm.controls['formDetails'].controls['userName'].hasError('required')"><b class="text-danger"> name required </b></p>
+        <p *ngIf="userForm.controls['formDetails'].controls['userName'].hasError('minlength')"><b class="text-danger"> min length 4</b></p>
+        <p *ngIf="userForm.controls['formDetails'].controls['userName'].hasError('maxlength')"><b class="text-danger"> max length 20</b></p>
+        <p *ngIf="userForm.controls['formDetails'].controls['userName'].valid"><b class="text-success"> Correct </b></p>
+        <!-- <p *ngIf="userForm.invalid"><b class="text-warning"> invalid</b></p> -->
+
+
+        <div class="form-group">
+          <label for="emailid">Enter Email Id</label>
+          <input type="email" class="form-control" formControlName="userEmail" placeholder="user email">
+        </div>
+
+        <div class="clearfix">
+        <p class="pull-left" *ngIf="userForm.controls['formDetails'].controls['userEmail'].hasError('required')"><b class="text-danger"> name required </b></p>
+        <!-- <p class="pull-left" *ngIf="userForm.controls['formDetails'].controls['userEmail'].hasError( 'minlength')"><b class="text-danger">minlength:4-- </b></p> -->
+        <p class="pull-left" *ngIf="userForm.controls['formDetails'].controls['userEmail'].hasError('pattern')"><b class="text-danger"> pattern abc@xyz.com </b></p>
+        <!-- <p *ngIf="userForm.controls['formDetails'].controls['userEmail'].hasError('minlength')"><b class="text-danger"> min length 4 </b></p> -->
+        <p class="pull-left " *ngIf="userForm.controls['formDetails'].controls['userEmail'].valid"><b class="text-success"> Correct </b> </p>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmemailid">Confirm Email Id</label>
+          <input type="email" class="form-control" formControlName="confirmEmail" placeholder="confirm email">
+        </div>
+
+
+
+        <div class="clearfix">
+         <p *ngIf="!userForm.controls['formDetails'].controls['confirmEmail'].pristine && (userForm.controls['formDetails'].controls['userEmail'].value != userForm.controls['formDetails'].controls['confirmEmail'].value) "> <b class="text-danger">email confirm value should match email </b></p>
+          <p *ngIf="!userForm.controls['formDetails'].controls['confirmEmail'].pristine && (userForm.controls['formDetails'].controls['userEmail'].value == userForm.controls['formDetails'].controls['confirmEmail'].value) "> <b class="text-success">Correct</b></p>
+        </div>
+
+
+
+        <button class="btn btn-primary btn-lg" [disabled]="userForm.invalid">Submit</button>
+      </div>
+    </div>
+    <div formArrayName="formArray"></div>
+  </form>
+</div>

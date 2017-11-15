@@ -1,0 +1,17 @@
+<div class="btn-group ">
+
+  <button class="btn btn-primary" #btn1 data-toggle="tooltip" title="sort by user id" (click)="onClick(btn1.value)" value="id"> UserId
+    <i *ngIf="arrow && arrowname=='id'" class="fa  fa-arrow-circle-down"></i>
+    <i *ngIf="!arrow && arrowname=='id'" class="fa  fa-arrow-circle-up"></i>
+  </button>
+
+
+  <button class="btn btn-primary" data-toggle="tooltip" title="sort by user Title" #btn2 (click)="onClick(btn2.value)" value="title" >Title
+        <i  *ngIf="arrow && arrowname=='title'" class="fa  fa-arrow-circle-down"></i>
+        <i *ngIf="!arrow && arrowname=='title'" class="fa  fa-arrow-circle-up"></i>
+      </button>
+
+
+</div>
+
+ 
