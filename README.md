@@ -9,6 +9,7 @@
 <p> Routing and Lazy Loading</p>
 <p> Global Error Handling</p>
 <p> ChangeDetectionStrategy</p>
+<p> Sanitize Pipe</p>
 
  Thanks!
 
