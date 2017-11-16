@@ -1,4 +1,4 @@
-# Angular-5-BestPractices
+# Angular-5-Rep
 
 <p> Smart component and Dumb Componets<p>
 <p> Communication between components<p>
