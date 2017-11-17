@@ -10,6 +10,10 @@
 <p> Global Error Handling</p>
 <p> ChangeDetectionStrategy</p>
 <p> Sanitize Pipe</p>
+<p> Managing Routing childs</p>
+<p> Appling Guards</p>
+
+
 
  Thanks!
 
