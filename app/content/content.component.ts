@@ -5,7 +5,7 @@ import { Component, OnInit,Input ,ChangeDetectionStrategy} from '@angular/core';
   selector: 'app-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContentComponent implements OnInit {
 

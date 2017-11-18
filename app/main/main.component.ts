@@ -45,10 +45,10 @@ export class MainComponent implements OnInit {
       //this.userInfoFromStorage  = JSON.parse(sessionStorage.getItem('data'));
       // moved the logic to Service to Reuse when ever we need it.
       this.userInfoFromStorage =  this._storage.getItem('data');
-      this.userInfo = this.userInfoFromStorage.slice(this.fromVal,this.toVal)
+      this.userInfo = this.userInfoFromStorage.slice(this.fromVal,this.toVal);
 
-      let divNum = Math.floor(this.userInfoFromStorage.length/10)
-      this.storageLength = Array(divNum).fill(0).map((el,id,ar)=>(id+1))
+      let divNum = Math.floor(this.userInfoFromStorage.length/10);
+      this.storageLength = Array(divNum).fill(0).map((el,id,ar)=>(id+1));
 
     }
    //PAGINATION SETTINGS
@@ -59,19 +59,11 @@ export class MainComponent implements OnInit {
     // }
 
 
+    //testing requests.
 
-
-     this._getService.postDataRest().subscribe( (data)=> {console.log("data from post :" ,data)});
-     this._getService.getDataForId().subscribe( (data)=> {console.log("dataforId : ",data)});
-     this._getService.getDataForSingleId().subscribe( (data)=> {console.log("datafor single ID : ",data)});
-
-
-
-
-
-
-
-
+     // this._getService.postDataRest().subscribe( (data)=> {console.log("data from post :" ,data)});
+     // this._getService.getDataForId().subscribe( (data)=> {console.log("dataforId : ",data)});
+     // this._getService.getDataForSingleId().subscribe( (data)=> {console.log("datafor single ID : ",data)});
 
 
 

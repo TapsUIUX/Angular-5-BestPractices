@@ -24,7 +24,9 @@ const routes : Routes =[
   {path: 'home' , component : HomepageComponent},
   {path: 'content' , component : MainComponent},
   //Lazy loading the form module for better performance
-  {path: 'lazy' , loadChildren:'./lazyform.module#LazyformModule'}
+  {path: 'lazy' , loadChildren:'./lazyform.module#LazyformModule'},
+  {path: 'newlazy' , loadChildren:'./newlazy.module#NewlazyModule'}
+  //{path: 'newlazy' , loadChildren:'./withchildroute.module#WithchildrouteModule'}
 ];
 
 

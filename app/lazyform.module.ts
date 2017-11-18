@@ -8,7 +8,6 @@ import {  ReactiveFormsModule  } from '@angular/forms';
 
 const routes : Routes =[
   {path: 'lazyform' , component : ReactiveformComponent}
-
 ];
 
 

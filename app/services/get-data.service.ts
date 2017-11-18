@@ -25,6 +25,15 @@ export class GetDataService {
     );
   this.dataForId =this._http.post("https://jsonplaceholder.typicode.com/posts",postdata,{
   params: new HttpParams().set('id', '1003'),
+
+    // String notEncoded = "Basic " + user + ":" + password;
+    // String encodedAuth = Base64.getEncoder().encodeToString(notEncoded.getBytes());
+    // HttpHeaders headers = new HttpHeaders();
+    // headers.setContentType(MediaType.APPLICATION_JSON);
+    // headers.add("Authorization", encodedAuth);
+    // return headers;
+
+
 })
 
   }
