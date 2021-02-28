@@ -14,16 +14,23 @@ export class GetDataService {
     "body": "dummy data are here"}
 
   constructor( private _http:HttpClient ) {
-   this.data=this._http.get("https://jsonplaceholder.typicode.com/posts");
-  // for a single ID
-   this.dataforSingle=this._http.get("https://jsonplaceholder.typicode.com/posts",{
-     params: new HttpParams().set('id', '100'),   });
-
+  
    let postdata = JSON.stringify(this.datapost);
-   this.dataRest = this._http.post("https://jsonplaceholder.typicode.com/posts", postdata
+     
+  }
+  getData(){
+    return  this._http.get("https://jsonplaceholder.typicode.com/posts");
+  }
+
+  postDataRest(){
+    return  this._http.post("https://jsonplaceholder.typicode.com/posts", postdata
    //, { headers: new HttpHeaders().set('Authorization', "*")}
     );
-  this.dataForId =this._http.post("https://jsonplaceholder.typicode.com/posts",postdata,{
+   
+  }
+
+ getDataForId(){
+   return  this._http.post("https://jsonplaceholder.typicode.com/posts",postdata,{
   params: new HttpParams().set('id', '1003'),
 
     // String notEncoded = "Basic " + user + ":" + password;
@@ -34,23 +41,12 @@ export class GetDataService {
     // return headers;
 
 
-})
-
-  }
-  getData(){
-    return  this.data
-  }
-
-  postDataRest(){
-    return  this.dataRest
-  }
-
- getDataForId(){
-   return  this.dataForId
+   });
  }
 
  getDataForSingleId(){
-   return this.dataforSingle
+   return this._http.get("https://jsonplaceholder.typicode.com/posts",{
+     params: new HttpParams().set('id', '100'),   });
  }
 
 }
